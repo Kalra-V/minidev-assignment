@@ -1,12 +1,20 @@
+'use client';
+import { useState } from 'react';
 import { AppNavbar } from './AppNavbar';
 import { AppSidebar } from './AppSidebar';
 import { ChatPanel } from './ChatPanel';
 import { PreviewPanel } from './PreviewPanel';
 
+export enum AppState {
+  DRAFT = 'draft',
+  PUBLISHED = 'published',
+}
+
 export function AppShell() {
+  const [appState, setAppState] = useState(AppState.DRAFT);
   return (
     <div className="flex h-screen flex-col">
-      <AppNavbar />
+      <AppNavbar appState={appState} />
       
       <div className="flex flex-1 overflow-hidden">
         <AppSidebar />
@@ -17,7 +25,7 @@ export function AppShell() {
           </div>
           
           <div className="hidden w-[500px] lg:block">
-            <PreviewPanel />
+            <PreviewPanel setAppState={setAppState} />
           </div>
         </div>
       </div>

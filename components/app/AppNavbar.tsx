@@ -2,8 +2,9 @@
 
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
+import { AppState } from './AppShell';
 
-export function AppNavbar() {
+export function AppNavbar({ appState }: { appState: AppState }) {
   return (
     <nav className="flex h-16 items-center justify-between border-b border-neutral-200 bg-white px-4">
       <div className="flex items-center gap-3">
@@ -20,7 +21,7 @@ export function AppNavbar() {
         <Button variant="outline" size="sm">
           Top Up
         </Button>
-        <Badge variant="warning">Draft</Badge>
+        <Badge variant={appState === AppState.DRAFT ? 'warning' : 'success'}>{appState === AppState.DRAFT ? 'Draft' : 'Published'}</Badge>
       </div>
     </nav>
   );

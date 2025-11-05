@@ -1,8 +1,9 @@
 'use client';
 
 import { Button } from '@/components/ui/Button';
+import { AppState } from './AppShell';
 
-export function PreviewToolbar() {
+export function PreviewToolbar({ setAppState }: { setAppState: (appState: AppState) => void }) {
   const handleScreenshot = () => {
     alert('Screenshot feature - to be implemented');
   };
@@ -12,7 +13,7 @@ export function PreviewToolbar() {
   };
 
   const handlePublish = () => {
-    alert('Publish modal - to be implemented');
+    setAppState(AppState.PUBLISHED);
   };
 
   const handleCodeView = () => {

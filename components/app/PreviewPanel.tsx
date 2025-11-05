@@ -1,11 +1,12 @@
 'use client';
 
+import { AppState } from './AppShell';
 import { PreviewToolbar } from './PreviewToolbar';
 
-export function PreviewPanel() {
+export function PreviewPanel({ setAppState }: { setAppState: (appState: AppState) => void }) {
   return (
     <div className="flex flex-col border-l border-neutral-200 bg-neutral-50">
-      <PreviewToolbar />
+      <PreviewToolbar setAppState={setAppState} />
       
       <div className="flex flex-1 items-center justify-center p-8">
         <div className="relative h-[600px] w-[375px] overflow-hidden rounded-[3rem] border-8 border-neutral-900 bg-white shadow-2xl">
