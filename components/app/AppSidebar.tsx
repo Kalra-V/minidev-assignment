@@ -13,34 +13,48 @@ export function AppSidebar() {
   const [activeProject, setActiveProject] = useState('1');
   const [isCollapsed, setIsCollapsed] = useState(false);
 
-  if (isCollapsed) {
-    return (
-      <div className="flex w-12 flex-col border-r border-neutral-200 bg-white">
-        <button
-          onClick={() => setIsCollapsed(false)}
-          className="p-3 hover:bg-neutral-50"
-          aria-label="Expand sidebar"
-        >
-          ☰
-        </button>
-      </div>
-    );
-  }
-
   return (
-    <aside className="flex w-64 flex-col border-r border-neutral-200 bg-white">
-      <div className="flex h-16 items-center justify-between border-b border-neutral-200 px-4">
-        <h2 className="text-lg font-semibold text-neutral-900">Projects</h2>
-        <button
-          onClick={() => setIsCollapsed(true)}
-          className="text-neutral-500 hover:text-neutral-900"
-          aria-label="Collapse sidebar"
-        >
-          ←
-        </button>
+    <aside
+      className={cn(
+        'flex flex-col overflow-hidden border-r border-neutral-200 bg-white transition-[width] duration-300 ease-in-out',
+        isCollapsed ? 'w-12' : 'w-64'
+      )}
+    >
+      <div
+        className={cn(
+          'flex h-16 items-center border-b border-neutral-200 px-4 transition-all duration-200 ease-in-out',
+          isCollapsed ? 'justify-center' : 'justify-between'
+        )}
+      >
+        {isCollapsed ? (
+          <button
+            onClick={() => setIsCollapsed(false)}
+            className="rounded p-3 hover:bg-neutral-50"
+            aria-label="Expand sidebar"
+          >
+            ☰
+          </button>
+        ) : (
+          <>
+            <h2 className="text-lg font-semibold text-neutral-900">Projects</h2>
+            <button
+              onClick={() => setIsCollapsed(true)}
+              className="text-neutral-500 transition-colors hover:text-neutral-900"
+              aria-label="Collapse sidebar"
+            >
+              ←
+            </button>
+          </>
+        )}
       </div>
 
-      <div className="flex-1 overflow-y-auto p-2">
+      <div
+        className={cn(
+          'flex-1 overflow-y-auto p-2 transition-opacity duration-200 ease-in-out',
+          isCollapsed ? 'pointer-events-none opacity-0' : 'opacity-100'
+        )}
+        aria-hidden={isCollapsed}
+      >
         {mockProjects.map((project) => (
           <button
             key={project.id}
@@ -58,7 +72,13 @@ export function AppSidebar() {
         ))}
       </div>
 
-      <div className="border-t border-neutral-200 p-2">
+      <div
+        className={cn(
+          'border-t border-neutral-200 p-2 transition-opacity duration-200 ease-in-out',
+          isCollapsed ? 'pointer-events-none opacity-0' : 'opacity-100'
+        )}
+        aria-hidden={isCollapsed}
+      >
         <button className="w-full rounded-lg px-3 py-2 text-left text-sm text-neutral-700 hover:bg-neutral-100">
           Settings
         </button>
