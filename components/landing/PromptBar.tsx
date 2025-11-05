@@ -5,8 +5,8 @@ import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { LANDING_COPY } from '@/lib/constants';
 
-export function PromptBar() {
-  const [prompt, setPrompt] = useState('');
+export function PromptBar({ prompt, setPrompt }: { prompt: string, setPrompt: (prompt: string) => void }) {
+  
   const [error, setError] = useState('');
 
   const handleSubmit = () => {

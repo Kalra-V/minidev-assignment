@@ -3,13 +3,11 @@
 import { LANDING_COPY } from '@/lib/constants';
 import { Badge } from '@/components/ui/Badge';
 
-export function IdeaChips() {
+export function IdeaChips({ setPrompt }: { setPrompt: (prompt: string) => void }) {
   const handleChipClick = (idea: string) => {
     const input = document.querySelector('input[placeholder*="launchpad"]') as HTMLInputElement;
     if (input) {
-      input.value = `Create a ${idea.toLowerCase()}`;
-      input.focus();
-      input.dispatchEvent(new Event('input', { bubbles: true }));
+      setPrompt(`Create a ${idea.toLowerCase()}`);
     }
   };
 
