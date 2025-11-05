@@ -54,10 +54,10 @@ export function Leaderboard() {
                         <th className="px-4 py-3 text-left text-sm font-semibold text-neutral-900">
                           24h Volume
                         </th>
-                        <th className="px-4 py-3 text-left text-sm font-semibold text-neutral-900">
+                        <th className="px-4 py-3 text-left text-sm font-semibold text-neutral-900 hidden md:table-cell">
                           MINI Earned
                         </th>
-                        <th className="px-4 py-3 text-left text-sm font-semibold text-neutral-900">
+                        <th className="px-4 py-3 text-left text-sm font-semibold text-neutral-900 hidden md:table-cell">
                           Action
                         </th>
                       </tr>
@@ -80,10 +80,10 @@ export function Leaderboard() {
                           <td className="px-4 py-4 text-sm text-neutral-900">
                             {entry.volume24h}
                           </td>
-                          <td className="px-4 py-4 text-sm font-semibold text-primary">
+                          <td className="px-4 py-4 text-sm font-semibold text-primary hidden md:table-cell">
                             {entry.miniEarned}
                           </td>
-                          <td className="px-4 py-4 text-sm">
+                          <td className="px-4 py-4 text-sm hidden md:table-cell">
                             <Button
                               size="sm"
                               variant="outline"
