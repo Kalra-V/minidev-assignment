@@ -3,8 +3,15 @@
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { AppState } from './AppShell';
+import { useRouter } from 'next/navigation';
 
 export function AppNavbar({ appState }: { appState: AppState }) {
+  const router = useRouter();
+  
+  const handleVisitLanding = () => {
+    router.push('/');
+  };
+
   return (
     <nav className="flex h-16 items-center justify-between border-b border-neutral-200 bg-white px-4">
       <div className="flex items-center gap-3">
@@ -18,6 +25,9 @@ export function AppNavbar({ appState }: { appState: AppState }) {
       </div>
 
       <div className="flex items-center gap-3">
+      <Button variant="outline" size="sm" onClick={handleVisitLanding}>
+          Visit Landing
+        </Button>
         <Button variant="outline" size="sm">
           Top Up
         </Button>
