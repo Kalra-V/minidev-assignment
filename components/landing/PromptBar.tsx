@@ -10,8 +10,8 @@ export function PromptBar({ prompt, setPrompt }: { prompt: string, setPrompt: (p
   const [error, setError] = useState('');
 
   const handleSubmit = () => {
-    if (!prompt.trim()) {
-      setError('Tell us your idea to get started.');
+    if (!prompt.trim() || prompt.length < 10) {
+      setError('Tell us your idea to get started. (Minimum 10 characters)');
       return;
     }
     setError('');

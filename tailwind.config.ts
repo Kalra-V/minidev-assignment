@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#FF6B35', // Orange
+          DEFAULT: '#FF9500', // Orange
           50: '#FFE8E0',
           100: '#FFD1C2',
           200: '#FFB199',
