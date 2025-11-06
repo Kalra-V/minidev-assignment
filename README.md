@@ -2,6 +2,21 @@
 
 A Next.js 14 application featuring a landing page and app builder interface for creating Farcaster miniapps.
 
+Vercel deployment: 
+- Landing page - https://minidev-assignment-a5irci0lc-kalra-vs-projects.vercel.app/
+- App - https://minidev-assignment-a5irci0lc-kalra-vs-projects.vercel.app/app
+
+## How I approached this assignment
+- I went through the entire assignment docs and the figma file
+- Using AI, laid the foundation of the assignment to quickly get it up and running
+- After that, carefully went through the basic structure of the code and app
+- Fixed bugs, and implemented functionalities as expected
+- Worked incrementally on the foundation laid by AI
+
+## What could've improved from my end
+- Could have spent more time on the assignment but wasn't able to, because of full-time job in a fast-paced startup (I resigned on 4th November, 2025. Currently giving knowledge transfers, after that do not need to serve notice period as it was negotiable)
+- Could have improved the UI by learning more about UI-focused development
+
 ## Project Overview
 
 This project implements:
@@ -26,12 +41,7 @@ This project implements:
 
 ### Installation
 
-**Note**: Due to npm cache permission issues, you may need to run this first:
-```bash
-sudo chown -R $(whoami) ~/.npm
-```
-
-Then install dependencies:
+Install dependencies:
 
 ```bash
 npm install
@@ -115,7 +125,7 @@ npm run format
 The project follows the Figma design system with:
 
 ### Colors
-- **Primary (Orange)**: `#FF6B35` with full shade scale
+- **Primary (Orange)**: `##FF9500` with full shade scale
 - **Secondary (Purple)**: `#8B5CF6` with full shade scale
 - **Neutral**: Grayscale from 50-950
 
@@ -158,41 +168,10 @@ Currently stubbed with placeholder data:
 - Preview shows placeholder iPhone frame
 - Projects list uses mock data
 
-## Accessibility
-
-- Semantic HTML elements
-- ARIA labels on inputs and interactive elements
-- Keyboard navigation support
-- Focus visible states on all interactive elements
-- Proper heading hierarchy
-
-## Performance Considerations
-
-- Font preloading via `next/font`
-- Optimized images (when implemented)
-- Code splitting via Next.js App Router
-- Minimal JavaScript on landing page
-
-## Deployment
-
-Designed for deployment on Vercel:
-
-1. Push to GitHub
-2. Import project in Vercel
-3. Deploy (auto-detects Next.js)
 
 ### Environment Variables
 
 None required for the initial setup (all UI-focused).
-
-## Lighthouse Reports
-
-To generate Lighthouse reports:
-
-1. Build the production version: `npm run build && npm start`
-2. Open Chrome DevTools > Lighthouse
-3. Run audits for both mobile and desktop
-4. Save reports to `/lighthouse` directory
 
 ## Notes & Deviations
 
@@ -202,18 +181,4 @@ To generate Lighthouse reports:
 4. **Build Flow**: Simulated with timeouts and mock responses
 5. **Preview Rendering**: Shows placeholder - actual miniapp rendering not implemented
 
-## Future Enhancements
-
-- Integrate real authentication (Farcaster Auth, wallet connect)
-- Connect to backend API for projects and chat
-- Implement actual miniapp preview rendering
-- Add top-up and publish modals
-- Implement code view panel
-- Add screenshot functionality
-- Persist chat history per project
-- Add keyboard shortcuts
-
-## License
-
-Proprietary - Minidev Assignment
 
